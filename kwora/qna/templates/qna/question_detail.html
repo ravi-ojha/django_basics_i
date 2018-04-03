@@ -15,12 +15,14 @@
   <body>
     <div class="container">
         <h1>Kwora - a virtual place for bakar questions </h1>
-        {% for question in questions %}
-        <div>
-            <h2><a href="{% url 'question_detail' question.id %}">{{ question.title }}</a></h2>
-            <p class="posted-at">Posted at: {{ question.created_at }}</p>
-            <p>{{ question.description }}</p>
-        </div>
+        <h2><a href="{% url 'question_detail' question.id %}">{{ question.title }}</a></h2>
+        <p class="posted-at">Posted at: {{ question.created_at }}</p>
+        <p>{{ question.description }}</p>
+        {% for answer in answers %}
+        <h3>
+          Answer by {{ answer.author }} <small class="text-muted"> posted at {{ answer.created_at }}</small>
+        </h3>
+        <p>{{ answer.description }}</p>
         {% endfor %}
     </div>
     </body>
