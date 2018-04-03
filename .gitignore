@@ -102,3 +102,4 @@ ENV/
 
 # virtual env
 k_venv/
+**/db.sqlite3
