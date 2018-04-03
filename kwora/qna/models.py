@@ -14,3 +14,10 @@ class Question(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Answer(models.Model):
+    question = models.ForeignKey(Question)
+    description = models.TextField()
+    author = models.ForeignKey(User)
+    created_at = models.DateTimeField(default=timezone.now)
